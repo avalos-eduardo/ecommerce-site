@@ -1,4 +1,5 @@
 import { FiChevronsDown } from "react-icons/fi";
+import { HashLink } from "react-router-hash-link";
 
 interface HeroSectionProps {
   header: string;
@@ -13,7 +14,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <>
-      <section className="pt-5 flex flex-col md:pt-15 md:flex-row h-auto">
+      <section className="pt-5 flex flex-col md:pt-20 md:flex-row h-auto">
         <div className="flex px-10 flex-col items-center justify-center text-center md:w-[50%] [&>*]:my-2">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#6c9469]">
             {header}
@@ -36,7 +37,9 @@ export default function HeroSection({
         </div>
       </section>
       <section className="py-15 flex justify-center items-center h-auto text-8xl lg:text-9xl lg:py-20">
-        <FiChevronsDown className="cursor-pointer text-gray-700 animate-bounce" />
+        <HashLink smooth to="/home#products">
+          <FiChevronsDown className="cursor-pointer text-gray-700 animate-bounce" />
+        </HashLink>
       </section>
     </>
   );
