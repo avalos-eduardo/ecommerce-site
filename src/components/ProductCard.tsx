@@ -1,4 +1,5 @@
 import { Product } from "../utils/fetchProducts";
+import { FaHeart } from "react-icons/fa";
 
 interface ProductCardProps {
   product: Product;
@@ -6,16 +7,32 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="rounded-2xl text-black shadow-lg flex flex-col items-center justify-around h-[20rem] md:h-[23rem] py-5 px-5">
-      <img
-        src={product.image}
-        alt={product.title}
-        className="w-[75px] md:w-[100px]"
-      />
-      <div className="text-sm mt-3 md:text-lg">
-        <h3>{product.title}</h3>
-        <p className="mt-1">${product.price}</p>
-        <button className="bg-[#6c9469] text-white rounded-xl py-1 px-5 mt-3 cursor-pointer">
+    <div className="relative bg-white rounded-2xl text-black shadow-lg flex flex-col h-[22rem] md:h-[25rem] p-4 transition-transform hover:scale-105 hover:shadow-xl">
+      <button className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors z-10 cursor-pointer">
+        <FaHeart className="text-gray-400 hover:text-red-600" />
+      </button>
+
+      <div className="flex items-center justify-center h-32 md:h-36 mb-4 bg-gray-50 rounded-lg">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="max-w-[80px] max-h-[80px] md:max-w-[100px] md:max-h-[100px] object-contain"
+        />
+      </div>
+
+      <div className="flex flex-col flex-grow">
+        <h3 className="text-sm md:text-base font-medium text-gray-800 line-clamp-2 h-10 md:h-12 mb-2">
+          {product.title}
+        </h3>
+
+        <p className="text-lg md:text-xl font-bold text-gray-900 mb-4">
+          $
+          {typeof product.price === "number"
+            ? product.price.toFixed(2)
+            : product.price}
+        </p>
+
+        <button className="mt-auto bg-[#6c9469] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] focus:ring-opacity-50 cursor-pointer">
           Add to Cart
         </button>
       </div>
