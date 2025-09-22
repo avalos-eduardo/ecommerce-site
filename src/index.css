@@ -1,2 +1,4 @@
-@import '@fontsource-variable/geist-mono';
+@import "@fontsource-variable/geist-mono";
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));

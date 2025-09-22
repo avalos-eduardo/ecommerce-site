@@ -1,8 +1,11 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { useShopContext } from "../context/shopContext";
 
 export default function Navbar() {
+  const { dispatch } = useShopContext();
+
   return (
     <header className="py-5 px-6 flex justify-between h-[5rem]">
       <h1 className="font-[geist-mono] font-extrabold flex w-[50%] text-2xl sm:text-3xl">
@@ -16,7 +19,10 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <button className="hover:text-blue-600 cursor-pointer">
+            <button
+              onClick={() => dispatch({ type: "TOGGLE_THEME" })}
+              className="hover:text-blue-600 cursor-pointer"
+            >
               <FaMoon />
             </button>
           </li>
