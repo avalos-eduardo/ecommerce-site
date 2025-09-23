@@ -22,9 +22,11 @@ export default function HeroSection({
           <p className="text-2xl text-gray-700 sm:text-3xl pb-1 max-w-md ">
             {paragraph}
           </p>
-          <button className="bg-[#6c9469] px-15 py-3 rounded-3xl text-white text-lg cursor-pointer">
-            Shop Now
-          </button>
+          <HashLink smooth to="/home/#products">
+            <button className="bg-[#6c9469] px-15 py-3 rounded-3xl text-white text-lg cursor-pointer">
+              Shop Now
+            </button>
+          </HashLink>
         </div>
         <div className="p-5 flex justify-center items-center md:w-[50%]">
           <div className="w-75 pt-5 h-auto md:w-100 lg:w-110 bg-transparent rounded-xl flex items-center justify-center font-semibold">
@@ -37,7 +39,7 @@ export default function HeroSection({
         </div>
       </section>
       <section className="py-15 flex justify-center items-center h-auto text-8xl lg:text-9xl lg:py-20">
-        <HashLink smooth to="/home#products">
+        <HashLink smooth to="/home/#products">
           <FiChevronsDown className="cursor-pointer text-gray-700 animate-bounce" />
         </HashLink>
       </section>
