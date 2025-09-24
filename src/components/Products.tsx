@@ -57,7 +57,7 @@ export default function Products() {
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="bg-gray-300 rounded-lg px-2 h-8 placeholder:text-center placeholder:text-gray-700 text-center mb-5 lg:h-10"
+        className="bg-gray-300 dark:bg-gray-400 rounded-lg px-2 h-8 placeholder:text-center placeholder:text-gray-950 text-center mb-5 lg:h-10"
       />
 
       <div className="flex justify-between pb-5">
