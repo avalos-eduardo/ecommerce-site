@@ -10,7 +10,7 @@ function AppContent() {
 
   return (
     <div className={state.darkMode ? "dark" : ""}>
-      <div className="bg-white text-black min-h-screen transition-colors">
+      <div className="bg-white dark:bg-[#242b36] text-black dark:text-[#cdcdcf] min-h-screen transition-colors">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

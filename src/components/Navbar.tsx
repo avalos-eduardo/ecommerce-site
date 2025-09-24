@@ -1,10 +1,11 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { useShopContext } from "../context/shopContext";
 
 export default function Navbar() {
-  const { dispatch } = useShopContext();
+  const { state, dispatch } = useShopContext();
 
   return (
     <header className="py-5 px-6 flex justify-between h-[5rem]">
@@ -23,7 +24,7 @@ export default function Navbar() {
               onClick={() => dispatch({ type: "TOGGLE_THEME" })}
               className="hover:text-blue-600 cursor-pointer"
             >
-              <FaMoon />
+              {state.darkMode === true ? <FaSun /> : <FaMoon />}
             </button>
           </li>
           <li>

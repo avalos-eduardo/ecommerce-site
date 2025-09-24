@@ -57,12 +57,12 @@ export default function Products() {
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="bg-gray-300 rounded-lg px-2 h-8 placeholder:text-center text-center mb-5 lg:h-10"
+        className="bg-gray-300 rounded-lg px-2 h-8 placeholder:text-center placeholder:text-gray-700 text-center mb-5 lg:h-10"
       />
 
       <div className="flex justify-between pb-5">
         <select
-          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 text-white cursor-pointer"
+          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
         >
@@ -74,7 +74,7 @@ export default function Products() {
         </select>
 
         <select
-          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 text-white cursor-pointer"
+          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
         >
