@@ -32,7 +32,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             : product.price}
         </p>
 
-        <button className="mt-auto bg-[#6c9469] dark:bg-[#538db1] dark:hover:bg-[#3e7394] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] focus:ring-opacity-50 cursor-pointer">
+        <button className="mt-auto bg-[#6c9469] dark:bg-[#538db1] dark:hover:bg-[#3e7394] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] dark:focus:ring-[#538db1] focus:ring-opacity-50 cursor-pointer">
           Add to Cart
         </button>
       </div>
