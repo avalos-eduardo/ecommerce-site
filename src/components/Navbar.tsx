@@ -1,8 +1,10 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { useShopContext } from "../context/shopContext";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { state, dispatch } = useShopContext();
@@ -13,10 +15,12 @@ export default function Navbar() {
         e-commerce.
       </h1>
       <nav className="flex w-[50%]">
-        <ul className="flex justify-end w-[100%] [&>*]:pr-2 [&>*]:pl-2 text-2xl sm:text-3xl">
+        <ul className="flex justify-end w-[100%] [&>*]:pr-1 [&>*]:pl-1 md:[&>*]:pr-2 md:[&>*]:pl-2 text-2xl sm:text-3xl">
           <li>
-            <button className="hover:text-red-600 cursor-pointer">
-              <FaHeart />
+            <button className="hover:text-green-600 cursor-pointer">
+              <Link to="/">
+                <FaHome />
+              </Link>
             </button>
           </li>
           <li>
@@ -25,6 +29,13 @@ export default function Navbar() {
               className="hover:text-blue-600 cursor-pointer"
             >
               {state.darkMode === true ? <FaSun /> : <FaMoon />}
+            </button>
+          </li>
+          <li>
+            <button className="hover:text-red-600 cursor-pointer">
+              <Link to="/favorites">
+                <FaHeart />
+              </Link>
             </button>
           </li>
           <li>

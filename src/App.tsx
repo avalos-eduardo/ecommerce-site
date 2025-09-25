@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
 import { ShopContextProvider } from "./context/ShopProvider";
 import { useShopContext } from "./context/shopContext";
+import Favorites from "./components/Favorites";
 
 function AppContent() {
   const { state } = useShopContext();
@@ -16,6 +17,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/home/products" element={<Products />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </div>
