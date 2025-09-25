@@ -1,4 +1,10 @@
 @import "@fontsource-variable/geist-mono";
+@import "@fontsource/open-sauce-one";
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.open-sauce-one-font {
+  font-family: "Open Sauce One", sans-serif;
+  font-weight: 700;
+}
