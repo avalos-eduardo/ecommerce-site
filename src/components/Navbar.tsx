@@ -39,8 +39,11 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <button className="hover:text-yellow-600 cursor-pointer">
+            <button className="hover:text-yellow-600 cursor-pointer flex items-start">
               <FaShoppingCart />
+              <p className="mx-2 px-2 rounded-4xl bg-red-800 text-center text-lg sm:text-2xl text-white">
+                {state.shoppingCart.length}
+              </p>
             </button>
           </li>
         </ul>
