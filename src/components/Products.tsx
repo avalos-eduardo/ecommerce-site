@@ -65,6 +65,7 @@ export default function Products() {
           className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
+          id="select-category"
         >
           <option value="all">All Categories</option>
           <option value="men's clothing">Men's Clothing</option>
@@ -77,6 +78,7 @@ export default function Products() {
           className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
+          id="sort-items"
         >
           <option value="default">Sort</option>
           <option value="name">Sort by Name</option>
