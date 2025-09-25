@@ -1,3 +1,4 @@
+import { useShopContext } from "../context/shopContext";
 import { Product } from "../utils/fetchProducts";
 import { FaHeart } from "react-icons/fa";
 
@@ -6,10 +7,28 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { state, dispatch } = useShopContext();
+  const isFavorite = state.favorites.some((p) => p.id === product.id);
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch({ type: "REMOVE_FROM_FAVORITES", payload: product.id });
+    } else {
+      dispatch({ type: "ADD_TO_FAVORITES", payload: product });
+    }
+  };
+
   return (
     <div className="relative bg-white dark:bg-[#4c5665] rounded-2xl text-black shadow-lg flex flex-col h-[22rem] md:h-[25rem] p-4 transition-transform hover:scale-105 hover:shadow-xl">
-      <button className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors z-10 cursor-pointer">
-        <FaHeart className="text-gray-400 hover:text-red-600" />
+      <button
+        onClick={toggleFavorite}
+        className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors z-10 cursor-pointer"
+      >
+        <FaHeart
+          className={
+            isFavorite ? "text-red-600" : "text-gray-400 hover:text-red-600"
+          }
+        />
       </button>
 
       <div className="flex items-center justify-center h-32 md:h-36 mb-4 bg-gray-50 dark:bg-gray-500 rounded-lg">

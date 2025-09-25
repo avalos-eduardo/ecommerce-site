@@ -6,4 +6,7 @@ export interface ShopState {
   favorites: Product[];
 }
 
-export type ShopActions = { type: "TOGGLE_THEME" };
+export type ShopActions =
+  | { type: "TOGGLE_THEME" }
+  | { type: "ADD_TO_FAVORITES"; payload: Product }
+  | { type: "REMOVE_FROM_FAVORITES"; payload: number };
