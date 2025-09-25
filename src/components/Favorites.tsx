@@ -10,11 +10,17 @@ export default function Favorites() {
         Your Favorites
       </h1>
       <section className="flex flex-col px-10 pt-15 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-center pt-2">
-          {state.favorites.map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
-        </div>
+        {state.favorites.length === 0 ? (
+          <p className="text-center text-lg md:text-2xl">
+            No favorited items...
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-center pt-2">
+            {state.favorites.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
