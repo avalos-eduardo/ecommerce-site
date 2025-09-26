@@ -18,11 +18,11 @@ export default function Navbar() {
       <nav className="flex w-[50%]">
         <ul className="flex justify-end w-[100%] [&>*]:pr-1 [&>*]:pl-1 md:[&>*]:pr-2 md:[&>*]:pl-2 text-2xl sm:text-3xl">
           <li>
-            <button className="hover:text-green-600 cursor-pointer">
-              <Link to="/">
+            <Link to="/">
+              <button className="hover:text-green-600 cursor-pointer">
                 <FaHome />
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li>
             <button
@@ -33,19 +33,22 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <button className="hover:text-red-600 cursor-pointer">
-              <Link to="/favorites">
+            <Link to="/favorites">
+              <button className="hover:text-red-600 cursor-pointer">
                 <FaHeart />
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li>
-            <button className="hover:text-yellow-600 cursor-pointer flex items-start">
-              <FaShoppingCart />
-              <p className="mx-2 px-2 rounded-4xl bg-red-800 text-center text-lg sm:text-2xl text-white">
-                {totalItems}
-              </p>
-            </button>
+            <Link to="/cart">
+              <button className="hover:text-yellow-600 cursor-pointer flex items-start">
+                <FaShoppingCart />
+
+                <p className="mx-2 px-2 rounded-4xl bg-red-800 text-center text-lg sm:text-2xl text-white">
+                  {totalItems}
+                </p>
+              </button>
+            </Link>
           </li>
         </ul>
       </nav>

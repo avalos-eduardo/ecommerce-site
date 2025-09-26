@@ -5,6 +5,7 @@ import Products from "./components/Products";
 import { ShopContextProvider } from "./context/ShopProvider";
 import { useShopContext } from "./context/shopContext";
 import Favorites from "./components/Favorites";
+import Cart from "./components/Cart";
 
 function AppContent() {
   const { state } = useShopContext();
@@ -18,6 +19,7 @@ function AppContent() {
           <Route path="/home" element={<Home />} />
           <Route path="/home/products" element={<Products />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </div>
