@@ -1,13 +1,14 @@
-import { FaShoppingCart } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
-import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHome, FaMoon, FaSun, FaHeart } from "react-icons/fa";
 import { useShopContext } from "../context/shopContext";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { state, dispatch } = useShopContext();
+
+  const totalItems = state.shoppingCart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
 
   return (
     <header className="py-5 px-6 flex justify-between h-[5rem]">
@@ -42,7 +43,7 @@ export default function Navbar() {
             <button className="hover:text-yellow-600 cursor-pointer flex items-start">
               <FaShoppingCart />
               <p className="mx-2 px-2 rounded-4xl bg-red-800 text-center text-lg sm:text-2xl text-white">
-                {state.shoppingCart.length}
+                {totalItems}
               </p>
             </button>
           </li>
