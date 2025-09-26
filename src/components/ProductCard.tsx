@@ -10,7 +10,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { state, dispatch } = useShopContext();
   const isFavorite = state.favorites.some((p) => p.id === product.id);
 
-  const toggleFavorite = () => {
+  const handleToggleFavorite = () => {
     if (isFavorite) {
       dispatch({ type: "REMOVE_FROM_FAVORITES", payload: product.id });
     } else {
@@ -18,10 +18,24 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
   };
 
+  const cartItem = state.shoppingCart.find((item) => item.id === product.id);
+
+  const handleAddToCart = () => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
+  const handleIncrement = () => {
+    dispatch({ type: "INCREMENT_QUANTITY", payload: product.id });
+  };
+
+  const handleDecrement = () => {
+    dispatch({ type: "DECREMENT_QUANTITY", payload: product.id });
+  };
+
   return (
     <div className="relative bg-white dark:bg-[#4c5665] rounded-2xl text-black shadow-lg flex flex-col h-[22rem] md:h-[25rem] p-4 transition-transform hover:scale-105 hover:shadow-xl">
       <button
-        onClick={toggleFavorite}
+        onClick={handleToggleFavorite}
         className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors z-10 cursor-pointer"
       >
         <FaHeart
@@ -51,9 +65,24 @@ export default function ProductCard({ product }: ProductCardProps) {
             : product.price}
         </p>
 
-        <button className="mt-auto bg-[#6c9469] dark:bg-[#538db1] dark:hover:bg-[#3e7394] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] dark:focus:ring-[#538db1] focus:ring-opacity-50 cursor-pointer">
-          Add to Cart
-        </button>
+        {cartItem ? (
+          <div className="flex justify-around mt-auto bg-[#6c9469] dark:bg-[#538db1] dark:hover:bg-[#3e7394] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] dark:focus:ring-[#538db1] focus:ring-opacity-50">
+            <button onClick={handleDecrement} className="cursor-pointer">
+              -
+            </button>
+            <p>{cartItem.quantity}</p>
+            <button onClick={handleIncrement} className="cursor-pointer">
+              +
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={handleAddToCart}
+            className="mt-auto bg-[#6c9469] dark:bg-[#538db1] dark:hover:bg-[#3e7394] hover:bg-[#5a7d57] text-white rounded-xl py-2.5 px-4 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#6c9469] dark:focus:ring-[#538db1] focus:ring-opacity-50 cursor-pointer"
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
     </div>
   );
