@@ -19,6 +19,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   const cartItem = state.shoppingCart.find((item) => item.id === product.id);
+  const totalPrice =
+    cartItem && typeof product.price === "number"
+      ? (product.price * cartItem.quantity).toFixed(2)
+      : typeof product.price === "number"
+      ? product.price.toFixed(2)
+      : product.price;
 
   const handleAddToCart = () => {
     dispatch({ type: "ADD_TO_CART", payload: product });
@@ -59,10 +65,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </h3>
 
         <p className="text-lg md:text-xl font-bold text-gray-900 dark:text-[#cdcdcf] mb-4">
-          $
-          {typeof product.price === "number"
-            ? product.price.toFixed(2)
-            : product.price}
+          ${totalPrice}
         </p>
 
         {cartItem ? (
