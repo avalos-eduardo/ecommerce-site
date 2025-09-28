@@ -88,7 +88,7 @@ export default function Products() {
       </div>
 
       <h1 className="text-lg">Items: ({filteredProducts.length})</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-center pt-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)
         ) : (

@@ -33,7 +33,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="relative bg-white dark:bg-[#4c5665] rounded-2xl text-black shadow-lg flex flex-col h-[22rem] md:h-[25rem] p-4 transition-transform hover:scale-105 hover:shadow-xl">
+    <div className="relative bg-white dark:bg-[#4c5665] rounded-2xl text-black shadow-lg flex flex-col h-[22rem] md:h-[25rem] p-4 transition-transform hover:scale-105 hover:shadow-xl text-center">
       <button
         onClick={handleToggleFavorite}
         className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors z-10 cursor-pointer"
