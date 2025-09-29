@@ -9,6 +9,9 @@ export default function Favorites() {
       <h1 className="pt-5 px-10 open-sauce-one-font text-2xl md:text-3xl">
         Your Favorites
       </h1>
+      <p className="pt-5 px-10 open-sauce-one-font">
+        Favorited Items: ({state.favorites.length})
+      </p>
       <section className="flex flex-col px-10 pt-15 pb-20">
         {state.favorites.length === 0 ? (
           <p className="text-center text-lg md:text-2xl">
