@@ -1,6 +1,7 @@
 import { FaShoppingCart, FaHome, FaMoon, FaSun, FaHeart } from "react-icons/fa";
 import { useShopContext } from "../context/shopContext";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const { state, dispatch } = useShopContext();
@@ -9,6 +10,15 @@ export default function Navbar() {
     (sum, item) => sum + item.quantity,
     0
   );
+
+  const handleToggleTheme = () => {
+    dispatch({ type: "TOGGLE_THEME" });
+    if (state.darkMode) {
+      toast("Light Mode Enabled", { icon: "☀️" });
+    } else {
+      toast("Dark Mode Enabled", { icon: "🌙" });
+    }
+  };
 
   return (
     <header className="py-5 px-6 flex justify-between h-[5rem]">
@@ -26,7 +36,7 @@ export default function Navbar() {
           </li>
           <li>
             <button
-              onClick={() => dispatch({ type: "TOGGLE_THEME" })}
+              onClick={handleToggleTheme}
               className="hover:text-blue-600 cursor-pointer"
             >
               {state.darkMode === true ? <FaSun /> : <FaMoon />}

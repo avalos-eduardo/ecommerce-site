@@ -1,6 +1,7 @@
 import { useShopContext } from "../context/shopContext";
 import { Product } from "../utils/fetchProducts";
 import { FaHeart } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 interface ProductCardProps {
   product: Product;
@@ -13,8 +14,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   const handleToggleFavorite = () => {
     if (isFavorite) {
       dispatch({ type: "REMOVE_FROM_FAVORITES", payload: product.id });
+      toast.error(`${product.title} removed from favorites`);
     } else {
       dispatch({ type: "ADD_TO_FAVORITES", payload: product });
+      toast.success(`${product.title} added to favorites`);
     }
   };
 
@@ -28,6 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleAddToCart = () => {
     dispatch({ type: "ADD_TO_CART", payload: product });
+    toast.success(`${product.title} added to cart`);
   };
 
   const handleIncrement = () => {
