@@ -15,7 +15,7 @@ function AppContent() {
     <div className={state.darkMode ? "dark" : ""}>
       <div className="bg-white dark:bg-[#242b36] text-black dark:text-[#cdcdcf] min-h-screen transition-colors">
         <Toaster
-          position="top-center"
+          position="bottom-center"
           reverseOrder={false}
           toastOptions={{
             style: {
