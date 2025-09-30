@@ -4,11 +4,12 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
+    "noEmit": true
   }
 }
