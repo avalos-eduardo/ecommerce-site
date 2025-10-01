@@ -62,7 +62,7 @@ export default function Products() {
 
       <div className="flex justify-between pb-5">
         <select
-          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
+          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer [text-align-last:center]"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
           id="select-category"
@@ -75,7 +75,7 @@ export default function Products() {
         </select>
 
         <select
-          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer"
+          className="rounded-lg w-[49%] text-center h-7 md:h-9 bg-gray-700 dark:bg-[#6c9469] text-white cursor-pointer [text-align-last:center]"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
           id="sort-items"
