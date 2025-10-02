@@ -10,8 +10,8 @@ Visit the Website: [E-Commerce Site](https://ecommerce-site-arc.pages.dev/)
 
 ## Screenshots
 
-[!HomePageLight](./assets/HomePageLight.png)
-[!ShoppingCartDark](./assets/ShoppingCartDark.png)
+![HomePageLight](./assets/HomePageLight.png)
+![ShoppingCartDark](./assets/ShoppingCartDark.png)
 
 ## Features
 
